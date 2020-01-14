@@ -6,7 +6,7 @@ const data = [
   {
     task: "Organize Garage",
     id: 1,
-    completed: true
+    completed: false
   },
   {
     task: "Bake Cookies",
@@ -45,7 +45,6 @@ class App extends React.Component {
   };
 
   toggleClear = id => {
-    console.log("kill me");
     this.setState({
       toDoStuff: this.state.toDoStuff.map(item => {
         if (item.id === id) {
@@ -61,7 +60,6 @@ class App extends React.Component {
   };
 
   clearDone = () => {
-    console.log("dicks");
     this.setState({
       toDoStuff: this.state.toDoStuff.filter(task => !task.completed)
     });
