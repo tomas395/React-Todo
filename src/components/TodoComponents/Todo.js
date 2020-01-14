@@ -3,7 +3,7 @@ import "./Todo.css";
 const Todo = prop => {
   return (
     <div
-      className={`item${prop.item.done ? " accomplished" : ``}`}
+      className={`item${prop.item.done ? " accomplished" : ""}`}
       onClick={() => prop.toggleClear(prop.item.id)}
     >
       <p>{prop.item.task}</p>
