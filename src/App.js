@@ -1,12 +1,12 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
-
+import "./components/TodoComponents/Todo.css";
 const data = [
   {
     task: "Organize Garage",
     id: 1,
-    completed: false
+    completed: true
   },
   {
     task: "Bake Cookies",
@@ -45,12 +45,13 @@ class App extends React.Component {
   };
 
   toggleClear = id => {
+    console.log("kill me");
     this.setState({
       toDoStuff: this.state.toDoStuff.map(item => {
         if (item.id === id) {
           return {
             ...item,
-            completed: !item.done
+            completed: !item.completed
           };
         } else {
           return item;
@@ -60,8 +61,9 @@ class App extends React.Component {
   };
 
   clearDone = () => {
+    console.log("dicks");
     this.setState({
-      toDoStuff: this.state.toDoStuff.filter(task => !task.done)
+      toDoStuff: this.state.toDoStuff.filter(task => !task.completed)
     });
   };
 
@@ -72,8 +74,8 @@ class App extends React.Component {
         <h2>What do you need to do?</h2>
         <TodoForm addItem={this.addItem} clearDone={this.clearDone} />
         <TodoList
-          toggleClear={this.toggleClear}
           toDoStuff={this.state.toDoStuff}
+          toggleClear={this.toggleClear}
         />
       </div>
     );

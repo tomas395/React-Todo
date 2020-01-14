@@ -1,0 +1,20 @@
+.item-accomplished {
+    text-decoration: line-through;
+}
+
+button {
+    background-color: dodgerblue;
+    border: 1px solid ridge;
+    color: white;
+    font-size: 16px;
+    padding: 6px 14px;
+}
+
+h1 {
+    text-align: left;
+}
+
+input::placeholder {
+    color: #e64944;
+    opacity: 1;
+}

@@ -8,14 +8,14 @@ class TodoForm extends React.Component {
     };
   }
 
-  handleChanges = event => {
+  handleChanges = e => {
     this.setState({
-      newItem: event.target.value
+      newItem: e.target.value
     });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault();
     this.props.addItem(this.state.newItem);
     this.setState({ newItem: "" });
   };
@@ -35,10 +35,10 @@ class TodoForm extends React.Component {
             onChange={this.handleChanges}
           />
           <button>Add Task</button>
-          <button onClick={this.props.clearDone}>
-            Clear your completed task
-          </button>
         </form>
+        <button onClick={this.props.clearDone}>
+          Clear your completed task
+        </button>
       </div>
     );
   }
